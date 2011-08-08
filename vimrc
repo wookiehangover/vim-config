@@ -129,7 +129,7 @@ set undodir=~/.vim/backup
 set term=builtin_ansi
 
 set noerrorbells
-"set visualbell
+set visualbell
 
 
 
@@ -161,7 +161,7 @@ let g:CommandTMaxHeight=20
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "let g:SuperTabCrMapping = 0
 let g:SuperTabCompletionType = "context"
-au BufEnter,BufRead,BufNewFile *.html let g:SuperTabMappingForward = '<s-tab>'
+au BufEnter,BufRead,BufNewFile *.html,*.md let g:SuperTabMappingForward = '<s-tab>'
 au BufLeave *.html let g:SuperTabMappingForward = '<tab>'
 
 " Markdown
