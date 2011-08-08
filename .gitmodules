@@ -1,0 +1,81 @@
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/nerdtree.vim"]
+	path = bundle/nerdtree.vim
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-fugitive.vim"]
+	path = bundle/vim-fugitive.vim
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-endwise.vim"]
+	path = bundle/vim-endwise.vim
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/delimitMate.vim"]
+	path = bundle/delimitMate.vim
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/supertab.vim"]
+	path = bundle/supertab.vim
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/vim-unimpaired.vim"]
+	path = bundle/vim-unimpaired.vim
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/jshint.vim"]
+	path = bundle/jshint.vim
+	url = git@github.com:wookiehangover/jshint.vim.git
+[submodule "bundle/command-t.vim"]
+	path = bundle/command-t.vim
+	url = https://github.com/vim-scripts/Command-T.git
+[submodule "bundle/html5.vim"]
+	path = bundle/html5.vim
+	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/solarized.vim"]
+	path = bundle/solarized.vim
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/syntastic.vim"]
+	path = bundle/syntastic.vim
+	url = https://github.com/scrooloose/syntastic
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-sparkup"]
+	path = bundle/vim-sparkup
+	url = https://github.com/kogakure/vim-sparkup.git
+[submodule "bundle/histwin.vim"]
+	path = bundle/histwin.vim
+	url = https://github.com/chrisbra/histwin.vim.git
+[submodule "bundle/vim-haml"]
+	path = bundle/vim-haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/snipmate.vim"]
+	path = bundle/snipmate.vim
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/vim-clojure"]
+	path = bundle/vim-clojure
+	url = https://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
