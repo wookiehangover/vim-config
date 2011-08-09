@@ -13,6 +13,10 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+
+  " Indent/unident block (Command-]) (Command-[)
+  map <D-]> >i{<CR>
+  map <D-[> <i{<CR>
 endif
 
 " Start without the toolbar

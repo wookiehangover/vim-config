@@ -65,42 +65,6 @@ set wildmenu " Hitting TAB in command mode will show possible completions above 
 
 set wrapscan " Searches wrap around end of file
 
-" Speed up viewport scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-" Faster split resizing (+,-)
-if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
-endif
-
-" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
-
-
-" Buffer navigation (,,) (,]) (,[) (,ls)
-map <Leader>, <C-^>
-:map <Leader>` :bnext<CR>
-" :map <Leader>] :bnext<CR>
-" :map <Leader>[ :bprev<CR>
-map <Leader>ls :buffers<CR>
-
-" Indent/unident block (,]) (,[)
-nnoremap <Leader>] >i{<CR>
-nnoremap <Leader>[ <i{<CR>
-
-" Remap keys for auto-completion, disable arrow keys
-"inoremap <expr>  <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-"inoremap <expr>  <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-"inoremap <expr>  <Down>     pumvisible() ? "\<C-n>" : "\<NOP>"
-"inoremap <expr>  <Up>       pumvisible() ? "\<C-p>" : "\<NOP>"
-"inoremap <Left>  <NOP>
-"inoremap <Right> <NOP>
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -130,6 +94,10 @@ set term=builtin_ansi
 
 set noerrorbells
 set visualbell
+
+" Speed up viewport scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 
 
 
@@ -235,6 +203,41 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+
+
+
+"""
+" KEY MAPPINGS
+"""
+
+" Faster split resizing (+,-)
+if bufwinnr(1)
+  map + <C-W>+
+  map - <C-W>-
+endif
+
+" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+
+" Buffer navigation (,,) (,]) (,[) (,ls)
+map <Leader>, <C-^>
+map <Leader>] :bnext<CR>
+map <Leader>[ :bprev<CR>
+map <Leader>ls :buffers<CR>
+
+" Remap keys for auto-completion, disable arrow keys
+"inoremap <expr>  <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+"inoremap <expr>  <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr>  <Down>     pumvisible() ? "\<C-n>" : "\<NOP>"
+"inoremap <expr>  <Up>       pumvisible() ? "\<C-p>" : "\<NOP>"
+"inoremap <Left>  <NOP>
+"inoremap <Right> <NOP>
+
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
