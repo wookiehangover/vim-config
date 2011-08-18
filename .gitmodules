@@ -79,3 +79,9 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "bundle/color-pack"]
+	path = bundle/color-pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
