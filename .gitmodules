@@ -85,3 +85,6 @@
 [submodule "bundle/color-pack"]
 	path = bundle/color-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "bundle/vim-markdown-preview"]
+	path = bundle/vim-markdown-preview
+	url = https://github.com/maba/vim-markdown-preview.git
