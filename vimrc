@@ -211,6 +211,10 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 " KEY MAPPINGS
 """
 
+" exit to normal mode with 'jj'
+inoremap jj <ESC>
+
+
 " Faster split resizing (+,-)
 if bufwinnr(1)
   map + <C-W>+
