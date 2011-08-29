@@ -32,7 +32,7 @@ set smartcase
 
 set foldcolumn=4 " Column to show folds
 set foldenable
-set foldlevel=2
+set foldlevel=3
 
 set foldmethod=syntax " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
@@ -214,6 +214,8 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
 
+" Change mapleader
+let mapleader=","
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
