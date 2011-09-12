@@ -129,8 +129,8 @@ let g:CommandTMaxHeight=20
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "let g:SuperTabCrMapping = 0
 let g:SuperTabCompletionType = "context"
-au BufEnter,BufRead,BufNewFile *.html,*.md let g:SuperTabMappingForward = '<s-tab>'
-au BufLeave *.html let g:SuperTabMappingForward = '<tab>'
+au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb let g:SuperTabMappingForward = '<s-tab>'
+au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
 
 " Markdown
 augroup mkd
@@ -144,7 +144,8 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 " JST
 au BufRead,BufNewFile *.jst set syntax=jst
-
+" Less
+au BufNewFile,BufRead *.less set filetype=less
 " Common Ruby files
 au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
