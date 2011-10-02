@@ -17,7 +17,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\∴\ ,trail:·
 
 set autoindent " Copy indent from last line when starting new line.
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
