@@ -99,7 +99,8 @@ set visualbell
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-
+" Change mapleader
+let mapleader=","
 
 
 """
@@ -131,24 +132,6 @@ let g:CommandTMaxHeight=20
 let g:SuperTabCompletionType = "context"
 au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb let g:SuperTabMappingForward = '<s-tab>'
 au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
-
-" Markdown
-augroup mkd
-  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-augroup END
-
-" JSON
-au BufRead,BufNewFile *.json set ft=json syntax=javascript
-" Jade
-au BufRead,BufNewFile *.jade set ft=jade syntax=jade
-" JST
-au BufRead,BufNewFile *.jst set syntax=jst
-" Less
-au BufNewFile,BufRead *.less set filetype=less
-" Common Ruby files
-au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
-
 " Command-T
 let g:CommandTMaxFiles=20000
 let g:CommandTMatchWindowAtTop=1
@@ -194,16 +177,31 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
-" make and python use real tabs
-au FileType make                                     set noexpandtab
-au FileType python                                   set noexpandtab
-
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+au BufRead,BufNewFile *.{markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+" Markdown
+augroup mkd
+  autocmd BufRead,BufNewFile *.md  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
+" JSON
+au BufRead,BufNewFile *.json set ft=json syntax=javascript
+
+" Jade
+au BufRead,BufNewFile *.jade set ft=jade syntax=jade
+
+" JST
+au BufRead,BufNewFile *.jst set syntax=jst
+
+" Less
+au BufNewFile,BufRead *.less set filetype=less
+
+" Common Ruby files
+au BufRead,BufNewFile Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
+
 
 
 
@@ -214,9 +212,6 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
-
-" Change mapleader
-let mapleader=","
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
@@ -264,11 +259,12 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+nmap <C-k> [e
+nmap <C-j> ]e
+
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+vmap <C-k> [egv
+vmap <C-j> ]egv
 
 " clear seach highlight
 map <Leader>h :noh<CR>
