@@ -259,12 +259,12 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
-nmap <C-k> [e
-nmap <C-j> ]e
+nmap <C-up> [e
+nmap <C-down> ]e
 
 " Bubble multiple lines
-vmap <C-k> [egv
-vmap <C-j> ]egv
+vmap <C-up> [egv
+vmap <C-down> ]egv
 
 " clear seach highlight
 map <Leader>h :noh<CR>
