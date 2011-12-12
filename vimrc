@@ -23,6 +23,7 @@ set autoindent " Copy indent from last line when starting new line.
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 
 set cursorline " Highlight current line
+set colorcolumn=80
 
 " Searching
 set hlsearch
@@ -58,7 +59,7 @@ set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.br
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+set wildignore+=*.o,*.obj,.git,*.rbc,docs/**,node_modules/**,vendor/bundle/**,vendor/gems/**
 
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,smarty/**,vendor/**,node_libraries/**,.git,.hg,.svn,.sass-cache,log,tmp,build,**/ckeditor/**
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
@@ -119,7 +120,7 @@ filetype plugin indent on
 """
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.dSYM$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
@@ -143,7 +144,7 @@ let g:CommandTCancelMap=['<Esc>', '<C-c>']
 
 " Coffeescript.vim
 "autocmd BufWritePost *.coffee CoffeeMake! -b
-"let coffee_folding = 1
+let coffee_folding = 1
 
 " Syntastic 
 let g:syntastic_enable_signs=1
@@ -154,6 +155,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" EasyMotion
+"let g:EasyMotion_leader_key = '<Leader>m'
 
 
 
@@ -179,7 +182,7 @@ endfunction
 
 
 " md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{markdown,mdown,mkd,mkdn} call s:setupMarkup()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " Markdown
@@ -194,7 +197,7 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
 " JST
-au BufRead,BufNewFile *.jst set syntax=jst
+au BufRead,BufNewFile *.jst,*.hbs set syntax=jst
 
 " Less
 au BufNewFile,BufRead *.less set filetype=less
