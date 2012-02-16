@@ -13,9 +13,6 @@
 [submodule "bundle/vim-endwise.vim"]
 	path = bundle/vim-endwise.vim
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "bundle/delimitMate.vim"]
-	path = bundle/delimitMate.vim
-	url = https://github.com/Raimondi/delimitMate.git
 [submodule "bundle/supertab.vim"]
 	path = bundle/supertab.vim
 	url = https://github.com/ervandew/supertab.git

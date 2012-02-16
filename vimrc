@@ -61,7 +61,7 @@ set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.br
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,docs/**,node_modules/**,vendor/bundle/**,vendor/gems/**
 
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,smarty/**,vendor/**,node_libraries/**,.git,.hg,.svn,.sass-cache,log,tmp,build,**/ckeditor/**
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,smarty/**,vendor/**,node_libraries/**,.git,.hg,.svn,.sass-cache,log,tmp,**/ckeditor/**
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
 
 set wrapscan " Searches wrap around end of file
@@ -131,7 +131,7 @@ let g:CommandTMaxHeight=20
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "let g:SuperTabCrMapping = 0
 let g:SuperTabCompletionType = "context"
-au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb let g:SuperTabMappingForward = '<s-tab>'
+au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
 au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
 " Command-T
 let g:CommandTMaxFiles=20000
@@ -197,7 +197,7 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
 " JST
-au BufRead,BufNewFile *.jst,*.hbs set syntax=jst
+au BufRead,BufNewFile *.jst,*.hbs,*.mustache,*.ejs set ft=html syntax=jst
 
 " Less
 au BufNewFile,BufRead *.less set filetype=less
