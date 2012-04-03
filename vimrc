@@ -197,7 +197,7 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
 " JST
-au BufRead,BufNewFile *.jst,*.hbs,*.mustache,*.ejs set ft=html syntax=jst
+au BufRead,BufNewFile *.jst,*.hbs,*.mustache,*.ejs set syntax=jst
 
 " Less
 au BufNewFile,BufRead *.less set filetype=less
