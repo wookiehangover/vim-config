@@ -13,9 +13,6 @@
 [submodule "bundle/vim-endwise.vim"]
 	path = bundle/vim-endwise.vim
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "bundle/supertab.vim"]
-	path = bundle/supertab.vim
-	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/vim-unimpaired.vim"]
 	path = bundle/vim-unimpaired.vim
 	url = https://github.com/tpope/vim-unimpaired.git
@@ -40,9 +37,6 @@
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -91,3 +85,12 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/paredit"]
+	path = bundle/paredit
+	url = git@github.com:emezeske/paredit.vim
+[submodule "bundle/rainbow_parentheses.vim"]
+	path = bundle/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git

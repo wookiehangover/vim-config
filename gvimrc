@@ -12,7 +12,7 @@ if has("gui_macvim")
   map <D-F> :Ack<space>
 
   " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
+  "map <D-/> <plug>NERDCommenterToggle<CR>
 
   " Indent/unident block (Command-]) (Command-[)
   map <D-]> >i{<CR>
@@ -26,6 +26,8 @@ if has("gui_macvim")
   let g:gist_detect_filetype = 1
 
 endif
+
+set cursorline " Highlight current line
 
 " Start without the toolbar
 set guioptions-=T

@@ -1,7 +1,7 @@
 """
 " GENERAL SETTINGS
 """
-color elflord
+color tomorrownight
 
 set nocompatible
 set lazyredraw
@@ -22,7 +22,6 @@ set list listchars=tab:\∴\ ,trail:·
 set autoindent " Copy indent from last line when starting new line.
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 
-set cursorline " Highlight current line
 set colorcolumn=80
 
 " Folding
@@ -125,26 +124,12 @@ let NERDTreeIgnore=['\.rbc$', '\~$', '\.dSYM$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
-let g:CommandTMaxHeight=20
-
-
-" SuperTab
-"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-"let g:SuperTabCrMapping = 0
-let g:SuperTabCompletionType = "context"
-au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
-au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
-" Command-T
 let g:CommandTMaxFiles=20000
 let g:CommandTMatchWindowAtTop=1
 let g:CommandTMaxHeight=12
 let g:CommandTCancelMap=['<Esc>', '<C-c>']
 
-" Sparkup
-"let g:sparkupNextMapping=''
-
 " Coffeescript.vim
-"autocmd BufWritePost *.coffee CoffeeMake! -b
 let coffee_folding = 1
 
 " Syntastic 
@@ -155,6 +140,28 @@ let g:syntastic_quiet_warnings=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+let vimclojure#FuzzyIndent = 1
+
+"""
+" Plugin Graveyard
+"""
+
+" SuperTab
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabCrMapping = 0
+"let g:SuperTabCompletionType = "context"
+"au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
+"au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
+
+" Sparkup
+"let g:sparkupNextMapping=''
 
 " EasyMotion
 "let g:EasyMotion_leader_key = '<Leader>m'
@@ -206,16 +213,12 @@ au BufNewFile,BufRead *.less set filetype=less
 " Common Ruby files
 au BufRead,BufNewFile Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
-
-
-
-
 """
 " KEY MAPPINGS
 """
 
-" exit to normal mode with 'jj'
-inoremap jj <ESC>
+" remap escape to ctrl-c
+imap <c-c> <esc>
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
@@ -235,15 +238,6 @@ map <Leader>, <C-^>
 map <Leader>] :bnext<CR>
 map <Leader>[ :bprev<CR>
 map <Leader>ls :buffers<CR>
-
-" Remap keys for auto-completion, disable arrow keys
-"inoremap <expr>  <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-"inoremap <expr>  <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-"inoremap <expr>  <Down>     pumvisible() ? "\<C-n>" : "\<NOP>"
-"inoremap <expr>  <Up>       pumvisible() ? "\<C-p>" : "\<NOP>"
-"inoremap <Left>  <NOP>
-"inoremap <Right> <NOP>
-
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -280,13 +274,4 @@ if &term == "xterm-ipad"
   onoremap <Tab> <Esc>
   inoremap <Tab> <Esc>`^
   inoremap <Leader><Tab> <Tab>
-endif
-
-"""
-" USER CONFIG
-"""
-
-" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
 endif
