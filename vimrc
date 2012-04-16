@@ -25,11 +25,7 @@ set hidden " When a buffer is brought to foreground, remember undo history and m
 set cursorline " Highlight current line
 set colorcolumn=80
 
-" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+" Folding
 
 set foldcolumn=4 " Column to show folds
 set foldenable
@@ -54,6 +50,11 @@ set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set splitbelow " New window goes below
 set splitright " New windows goes right
 
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 set showmode " Show the current mode.
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
 
@@ -85,10 +86,10 @@ set modelines=10
 
 "Directories for swp files
 set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+set directory=~/.vim/swap
 
 set undofile
-set undodir=~/.vim/backup
+set undodir=~/.vim/undo
 
 " xterm not recognized right by vi
 set term=builtin_ansi

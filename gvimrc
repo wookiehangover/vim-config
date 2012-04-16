@@ -17,26 +17,31 @@ if has("gui_macvim")
   " Indent/unident block (Command-]) (Command-[)
   map <D-]> >i{<CR>
   map <D-[> <i{<CR>
+
+  " Command-Shift-F for Ack
+  map <D-F> :Ack<space>
+
+  let g:gist_clip_command = 'pbcopy'
+  let g:gist_open_browser_after_post = 1
+  let g:gist_detect_filetype = 1
+
 endif
 
 " Start without the toolbar
 set guioptions-=T
 
-" Default gui color scheme
-"color solarized
+"color molokai
+color tomorrow_night
+set transparency=4
 
-" Set tranparency
-
-"set transparency=2
-
-" Command-Shift-F for Ack
-map <D-F> :Ack<space>
-
+"set guifont=Menlo " Set default font
+set guifont=Ubuntu\ Mono:h13
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateNERDTree()
 
+" Some Halper functions
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
