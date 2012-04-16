@@ -82,9 +82,6 @@
 [submodule "bundle/eco.vim"]
 	path = bundle/eco.vim
 	url = https://github.com/jayferd/eco.vim.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "bundle/paredit"]
 	path = bundle/paredit
 	url = git@github.com:emezeske/paredit.vim
@@ -94,3 +91,6 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/wincent/Command-T.git

@@ -22,6 +22,7 @@ set autoindent " Copy indent from last line when starting new line.
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 
 set colorcolumn=80
+set t_Co=256
 
 " Folding
 
@@ -271,4 +272,4 @@ if &term == "xterm-ipad"
   inoremap <Leader><Tab> <Tab>
 endif
 
-color molokai
+color tomorrow_night

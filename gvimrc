@@ -25,6 +25,9 @@ if has("gui_macvim")
   let g:gist_open_browser_after_post = 1
   let g:gist_detect_filetype = 1
 
+  "set guifont=Menlo " Set default font
+  set guifont=Ubuntu\ Mono:h13
+  set transparency=4
 endif
 
 set cursorline " Highlight current line
@@ -36,10 +39,8 @@ set guioptions-=r
 
 "color molokai
 color tomorrow_night
-set transparency=4
 
-"set guifont=Menlo " Set default font
-set guifont=Ubuntu\ Mono:h13
+set novisualbell
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
