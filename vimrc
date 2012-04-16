@@ -1,7 +1,6 @@
 """
 " GENERAL SETTINGS
 """
-color tomorrownight
 
 set nocompatible
 set lazyredraw
@@ -26,7 +25,7 @@ set colorcolumn=80
 
 " Folding
 
-set foldcolumn=4 " Column to show folds
+" set foldcolumn=4 " Column to show folds
 set foldenable
 set foldlevel=3
 
@@ -113,8 +112,6 @@ syntax on
 filetype plugin indent on
 
 
-
-
 """
 " PLUGIN CONFIG
 """
@@ -141,7 +138,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -165,7 +161,6 @@ let vimclojure#FuzzyIndent = 1
 
 " EasyMotion
 "let g:EasyMotion_leader_key = '<Leader>m'
-
 
 
 """
@@ -275,3 +270,5 @@ if &term == "xterm-ipad"
   inoremap <Tab> <Esc>`^
   inoremap <Leader><Tab> <Tab>
 endif
+
+color molokai

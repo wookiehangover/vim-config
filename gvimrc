@@ -15,8 +15,8 @@ if has("gui_macvim")
   "map <D-/> <plug>NERDCommenterToggle<CR>
 
   " Indent/unident block (Command-]) (Command-[)
-  map <D-]> >i{<CR>
-  map <D-[> <i{<CR>
+  " map <D-]> >i{<CR>
+  " map <D-[> <i{<CR>
 
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
@@ -31,6 +31,8 @@ set cursorline " Highlight current line
 
 " Start without the toolbar
 set guioptions-=T
+set guioptions-=L
+set guioptions-=r
 
 "color molokai
 color tomorrow_night
