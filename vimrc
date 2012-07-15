@@ -120,6 +120,8 @@ filetype plugin indent on
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.dSYM$']
 map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeDirArrows=0
+let NERDTreeMinimalUI=1
 
 " Command-T configuration
 let g:CommandTMaxFiles=20000
