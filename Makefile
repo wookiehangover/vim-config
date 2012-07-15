@@ -1,5 +1,5 @@
 VIM=${HOME}/.vim
-DATE=$(shell date +%Y%m%d%H%m)
+DATE=$(shell date +%Y%m%d%H%M)
 
 build:
 	make archive
