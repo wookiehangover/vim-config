@@ -2,18 +2,9 @@
 
 cd "$(dirname "$0")"
 
-echo "Updating Repo..."
-git pull
-git submodule init
-git submodule update
-
-echo
-
 function doIt() {
 
-  echo "Cleaning up previous .vim files..."
-  rm ~/.gvimrc
-  rm ~/.vimrc
+  make archive
 
   if [ -d ~/.vim/.git ]; then
     cd ~/.vim
@@ -28,15 +19,7 @@ function doIt() {
     # rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "readme.md" --exclude ".gitkeep" --exclude "Makefile" -a . ~/.vim
   fi
 
-  echo "Symlinking config files..."
-  ln -s ~/.vim/vimrc ~/.vimrc
-  ln -s ~/.vim/gvimrc ~/.gvimrc
-
-  echo "Building command-t..."
-  cd ~/.vim/bundle/command-t
-  /usr/bin/rake make
-
-  echo
+  make build
 
   echo "Vimfiles successfully installed!"
 
