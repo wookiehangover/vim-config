@@ -1,4 +1,18 @@
 
+" Start without the toolbar
+set guioptions-=T
+set guioptions-=L
+set guioptions-=r
+
+" color molokai
+" color monokaidark
+" color tomorrow_night
+" color darkburn
+" color badwolf
+
+color solarized
+
+" Some *special* options if we're in macvim
 if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
@@ -12,11 +26,7 @@ if has("gui_macvim")
   map <D-F> :Ack<space>
 
   " Command-/ to toggle comments
-  "map <D-/> <plug>NERDCommenterToggle<CR>
-
-  " Indent/unident block (Command-]) (Command-[)
-  " map <D-]> >i{<CR>
-  " map <D-[> <i{<CR>
+  map <D-/> <Plug>Commentary<CR>
 
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
@@ -25,28 +35,14 @@ if has("gui_macvim")
   let g:gist_open_browser_after_post = 1
   let g:gist_detect_filetype = 1
 
-  "set guifont=Menlo " Set default font
   set guifont=Ubuntu\ Mono:h13
-  set transparency=4
 endif
-
-set cursorline " Highlight current line
-
-" Start without the toolbar
-set guioptions-=T
-set guioptions-=L
-set guioptions-=r
-
-"color molokai
-color tomorrow_night
-
-set novisualbell
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateNERDTree()
 
-" Some Halper functions
+" Some NerdTree Halper functions from Janus
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
