@@ -14,11 +14,19 @@ function doIt() {
   echo "Cleaning up previous .vim files..."
   rm ~/.gvimrc
   rm ~/.vimrc
-  rm -rf ~/.vim
 
-  echo "Creating ~/.vim"
-  mkdir ~/.vim
-  rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "readme.md" --exclude ".gitkeep" --exclude "Makefile" -a . ~/.vim
+  if [ -d ~/.vim/.git ]; then
+    cd ~/.vim
+    git pull origin master
+    git submodule init
+    git submodule update
+  else
+    rm -rf ~/.vim
+    git clone --recursive git@github.com:wookiehangover/vim-config.git
+    # echo "Creating ~/.vim"
+    # mkdir ~/.vim
+    # rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "readme.md" --exclude ".gitkeep" --exclude "Makefile" -a . ~/.vim
+  fi
 
   echo "Symlinking config files..."
   ln -s ~/.vim/vimrc ~/.vimrc
