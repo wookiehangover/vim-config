@@ -26,9 +26,9 @@ set cursorline " highlight the current line
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
-set foldcolumn=4 " Column to show folds
+set foldcolumn=0 " Column to show folds
 set foldenable
-set foldlevel=3
+set foldlevel=4
 set foldmethod=syntax " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
 set foldnestmax=5 " Set max fold nesting level
@@ -75,6 +75,7 @@ set softtabstop=2 " Tab key results in 2 spaces
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
+set tabstop=2
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
@@ -125,15 +126,6 @@ map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeDirArrows=0
 let NERDTreeMinimalUI=1
 
-" Command-T configuration
-let g:CommandTMaxFiles=1000
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTMaxHeight=12
-let g:CommandTCancelMap=['<Esc>', '<C-c>']
-
-" Coffeescript.vim
-let coffee_folding = 1
-
 " Syntastic 
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
@@ -145,6 +137,22 @@ let g:syntastic_quiet_warnings=1
 
 let vimclojure#FuzzyIndent = 1
 
+let g:tagbar_type_ruby = {
+  \ 'kinds' : [
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
+  \ ]
+\ }
+
+let g:ctrlp_map = ''
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ }
 
 """
 " Plugin Graveyard
@@ -155,12 +163,18 @@ let vimclojure#FuzzyIndent = 1
 " au Syntax * RainbowParenthesesLoadSquare
 " au Syntax * RainbowParenthesesLoadBraces
 
+" Command-T configuration
+" let g:CommandTMaxFiles=1000
+" let g:CommandTMatchWindowAtTop=1
+" let g:CommandTMaxHeight=12
+" let g:CommandTCancelMap=['<Esc>', '<C-c>']
+
 " SuperTab
-"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-"let g:SuperTabCrMapping = 0
-"let g:SuperTabCompletionType = "context"
-"au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
-"au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabCrMapping = 0
+let g:SuperTabCompletionType = "context"
+au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
+au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
 
 " Sparkup
 "let g:sparkupNextMapping=''
@@ -208,14 +222,17 @@ au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 au BufRead,BufNewFile *.jst,*.hbs,*.mustache,*.ejs set syntax=jst
 
 " Less
-au BufNewFile,BufRead *.less set filetype=less
+" au BufNewFile,BufRead *.less set filetype=less
 
 " Common Ruby files
-au BufRead,BufNewFile Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
+au BufRead,BufNewFile Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt,*.rabl set ft=ruby syntax=ruby
 
 """
 " KEY MAPPINGS
 """
+
+map <C-Left> :tabp<CR>
+map <C-Right> :tabn<CR>
 
 " remap escape to ctrl-c
 imap <c-c> <esc>
@@ -265,6 +282,9 @@ vmap <C-down> ]egv
 
 " clear seach highlight
 map <Leader>h :noh<CR>
+
+" Tag Bar
+nmap <F8> :TagbarToggle<CR>
 
 " Vim on the iPad
 if &term == "xterm-ipad"

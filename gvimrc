@@ -4,22 +4,28 @@ set guioptions-=T
 set guioptions-=L
 set guioptions-=r
 
+set transparency=10
+
 " color molokai
-" color monokaidark
+color monokaidark
 " color tomorrow_night
 " color darkburn
 " color badwolf
-
-color solarized
+" color solarized
+" color inkpot
 
 " Some *special* options if we're in macvim
 if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
-  " Command-T for CommandT
+  " CtrlP
   macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
+  map <D-t> :CtrlP<CR>
+  imap <D-t> <ESC>:CtrlP<CR>
+
+  " Command-T for CommandT
+  " map <D-t> :CommandT<CR>
 
   " Command-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
@@ -35,7 +41,10 @@ if has("gui_macvim")
   let g:gist_open_browser_after_post = 1
   let g:gist_detect_filetype = 1
 
-  set guifont=Ubuntu\ Mono:h13
+  " set guifont=Ubuntu\ Mono\ for\ Powerline:h13
+
+  " Set font preference
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 endif
 
 " Project Tree

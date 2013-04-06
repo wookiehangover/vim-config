@@ -23,3 +23,9 @@ command-t:
 archive:
 	tar czvf ~/vim_backup_${DATE}.tar.gz ~/.vim
 
+clean:
+	rm ${VIM}/swap/*
+
+.PHONY: clean
+
+
