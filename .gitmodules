@@ -91,9 +91,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git://github.com/groenewege/vim-less.git
@@ -112,3 +109,6 @@
 [submodule "bundle/jst.vim"]
 	path = bundle/jst.vim
 	url = git://github.com/briancollins/vim-jst.git
+[submodule "bundle/powerline.vim"]
+	path = bundle/powerline.vim
+	url = git://github.com/Lokaltog/powerline.git

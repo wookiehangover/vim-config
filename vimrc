@@ -89,20 +89,14 @@ set wildmode=list:longest,list:full
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
-" Status Line
-" set laststatus=2
-" set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-
-" hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
-" hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
-" set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
+" Powerline
+set rtp+=~/.vim/bundle/powerline.vim/powerline/bindings/vim
+set noshowmode
 let g:Powerline_symbols = 'fancy'
-
 
 " Use modeline overrides
 set modeline
 set modelines=10
-
 
 " Speed up viewport scrolling
 nnoremap <C-e> 3<C-e>
@@ -174,7 +168,7 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:SuperTabCrMapping = 0
 let g:SuperTabCompletionType = "context"
 au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
-au BufLeave *.html,*.erb let g:SuperTabMappingForward = '<tab>'
+au BufLeave *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<tab>'
 
 " Sparkup
 "let g:sparkupNextMapping=''
@@ -220,9 +214,6 @@ au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
 " JST
 au BufRead,BufNewFile *.jst,*.hbs,*.mustache,*.ejs set syntax=jst
-
-" Less
-" au BufNewFile,BufRead *.less set filetype=less
 
 " Common Ruby files
 au BufRead,BufNewFile Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt,*.rabl set ft=ruby syntax=ruby

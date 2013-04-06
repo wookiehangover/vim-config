@@ -4,11 +4,11 @@ set guioptions-=T
 set guioptions-=L
 set guioptions-=r
 
-set transparency=10
+set transparency=5
 
 " color molokai
-color monokaidark
-" color tomorrow_night
+" color monokaidark
+color tomorrow_night
 " color darkburn
 " color badwolf
 " color solarized
@@ -41,7 +41,7 @@ if has("gui_macvim")
   let g:gist_open_browser_after_post = 1
   let g:gist_detect_filetype = 1
 
-  " set guifont=Ubuntu\ Mono\ for\ Powerline:h13
+  " set guifont=Ubuntu\ Mono\ for\ Powerline
 
   " Set font preference
   set guifont=Source\ Code\ Pro\ for\ Powerline:h13
