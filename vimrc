@@ -117,17 +117,17 @@ filetype plugin indent on
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.dSYM$']
 map <Leader>n :NERDTreeToggle<CR>
-let NERDTreeDirArrows=0
 let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeMouseMode=2
 
 " Syntastic 
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+let g:syntastic_mode_map = { 'passive_filetypes': ['javascript'] }
+
 
 let vimclojure#FuzzyIndent = 1
 
