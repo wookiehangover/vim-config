@@ -90,9 +90,11 @@ set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
 " Powerline
-set rtp+=~/.vim/bundle/powerline.vim/powerline/bindings/vim
-set noshowmode
-let g:Powerline_symbols = 'fancy'
+" set rtp+=~/.vim/bundle/powerline.vim/powerline/bindings/vim
+" set noshowmode
+" let g:Powerline_symbols = 'fancy'
+
+let g:airline_powerline_fonts = 1
 
 " Use modeline overrides
 set modeline
@@ -121,13 +123,12 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeMouseMode=2
 
-" Syntastic 
+" Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=1
 
 let g:syntastic_mode_map = { 'passive_filetypes': ['javascript'] }
-
 
 let vimclojure#FuzzyIndent = 1
 
@@ -145,7 +146,7 @@ let g:tagbar_type_ruby = {
 let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ 'file': '\.pyc$\|\.pyo$\|\.map$|\.min.js$|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
     \ }
 
 """
@@ -212,11 +213,14 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 " Jade
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
+"haml
+au BufRead,BufNewFile *.hamlc set ft=haml syntax=haml
+
 " JST
 au BufRead,BufNewFile *.jst,*.hbs,*.mustache,*.ejs set syntax=jst
 
 " Common Ruby files
-au BufRead,BufNewFile Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt,*.rabl set ft=ruby syntax=ruby
+au BufRead,BufNewFile Vagrantfile,Rakefile,Capfile,Gemfile,Thorfile,config.ru,.autotest,.irbrc,*.treetop,*.tt,*.rabl set ft=ruby syntax=ruby
 
 """
 " KEY MAPPINGS

@@ -103,12 +103,12 @@
 [submodule "bundle/jst.vim"]
 	path = bundle/jst.vim
 	url = git://github.com/briancollins/vim-jst.git
-[submodule "bundle/powerline.vim"]
-	path = bundle/powerline.vim
-	url = git://github.com/Lokaltog/powerline.git
 [submodule "bundle/css-color.vim"]
 	path = bundle/css-color.vim
 	url = git://github.com/skammer/vim-css-color.git
 [submodule "bundle/vim-signify"]
 	path = bundle/vim-signify
 	url = git://github.com/mhinz/vim-signify.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
