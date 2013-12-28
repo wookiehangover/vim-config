@@ -6,7 +6,7 @@ set guioptions-=r
 
 set transparency=5
 
-color molokai
+color molotov
 " color monokaidark
 " color tomorrow_night
 " color darkburn

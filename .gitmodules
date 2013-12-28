@@ -55,9 +55,6 @@
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = git://github.com/tpope/vim-markdown.git
 [submodule "bundle/color-pack"]
 	path = bundle/color-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
@@ -109,3 +106,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
+[submodule "bundle/vim-flavored-markdown"]
+	path = bundle/vim-flavored-markdown
+	url = git@github.com:jtratner/vim-flavored-markdown.git
