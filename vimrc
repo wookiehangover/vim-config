@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set background=dark
 syntax on
-colorscheme badwolf
+colorscheme molotov
 
 " Enabled later, after pathogen
 filetype off
@@ -82,7 +82,7 @@ set ttymouse=xterm " Set mouse type to xterm.
 set undofile " Persistent Undo.
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js,.DS_Store
 set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
 set wildmenu " Hitting TAB in command mode will show possible completions above command line.
 set wildmode=list:longest,list:full
@@ -117,11 +117,12 @@ filetype plugin indent on
 """
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.dSYM$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.dSYM$', '\.DS_Store']
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeMouseMode=2
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Syntastic
 let g:syntastic_enable_signs=1
@@ -190,7 +191,7 @@ endif
 function s:setupWrapping()
   set wrap
   set wm=2
-  set textwidth=72
+  set textwidth=80
 endfunction
 
 function s:setupMarkup()
@@ -198,14 +199,24 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
+function s:leaveMarkup()
+  set nowrap
+endfunction
+
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+au BufLeave *.{md,markdown,mdown,mkd,mkdn} call s:leaveMarkup()
+" au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+augroup markdown
+  au!
+  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 
 " Markdown
-augroup mkd
-  autocmd BufRead,BufNewFile *.md  set ai formatoptions=tcroqn2 comments=n:>
-augroup END
+" augroup mkd
+"   autocmd BufRead,BufNewFile *.md  set ai formatoptions=tcroqn2 comments=n:>
+" augroup END
 
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
