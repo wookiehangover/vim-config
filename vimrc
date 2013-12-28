@@ -95,6 +95,7 @@ set wrapscan " Searches wrap around end of file
 " let g:Powerline_symbols = 'fancy'
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Use modeline overrides
 set modeline
