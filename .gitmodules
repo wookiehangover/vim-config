@@ -55,9 +55,6 @@
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
-[submodule "bundle/color-pack"]
-	path = bundle/color-pack
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
 [submodule "bundle/vim-markdown-preview"]
 	path = bundle/vim-markdown-preview
 	url = https://github.com/maba/vim-markdown-preview.git
@@ -109,3 +106,6 @@
 [submodule "bundle/vim-flavored-markdown"]
 	path = bundle/vim-flavored-markdown
 	url = git@github.com:jtratner/vim-flavored-markdown.git
+[submodule "bundle/color-sampler-pack"]
+	path = bundle/color-sampler-pack
+	url = git@github.com:vim-scripts/Colour-Sampler-Pack.git
