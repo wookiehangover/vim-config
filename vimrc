@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set background=dark
 syntax on
-colorscheme molotov
+colorscheme badwolf
 
 " Enabled later, after pathogen
 filetype off
@@ -60,7 +60,7 @@ set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join
 set nostartofline " Don't reset cursor to start of line when moving around.
 set nowrap " Do not wrap lines.
 set nu " Enable line numbers.
-set ofu=syntaxcomplete#Complete " Set omni-completion method.
+" set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set report=0 " Show all changes.
 set ruler " Show the cursor position
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
@@ -88,11 +88,6 @@ set wildmenu " Hitting TAB in command mode will show possible completions above 
 set wildmode=list:longest,list:full
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
-
-" Powerline
-" set rtp+=~/.vim/bundle/powerline.vim/powerline/bindings/vim
-" set noshowmode
-" let g:Powerline_symbols = 'fancy'
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -128,7 +123,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 let g:syntastic_mode_map = { 'passive_filetypes': ['javascript'] }
 
@@ -145,7 +140,6 @@ let g:tagbar_type_ruby = {
   \ ]
 \ }
 
-let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.pyc$\|\.pyo$\|\.map$|\.min.js$|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
@@ -155,30 +149,12 @@ let g:ctrlp_custom_ignore = {
 " Plugin Graveyard
 """
 
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
-
-" Command-T configuration
-" let g:CommandTMaxFiles=1000
-" let g:CommandTMatchWindowAtTop=1
-" let g:CommandTMaxHeight=12
-" let g:CommandTCancelMap=['<Esc>', '<C-c>']
-
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:SuperTabCrMapping = 0
 let g:SuperTabCompletionType = "context"
 au BufEnter,BufRead,BufNewFile *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<s-tab>'
 au BufLeave *.html,*.md,*.erb,*.jst,*.mustache,*.hbs,*.ejs let g:SuperTabMappingForward = '<tab>'
-
-" Sparkup
-"let g:sparkupNextMapping=''
-
-" EasyMotion
-"let g:EasyMotion_leader_key = '<Leader>m'
-
 
 """
 " FORMATTING
@@ -192,7 +168,7 @@ endif
 function s:setupWrapping()
   set wrap
   set wm=2
-  set textwidth=80
+  set textwidth=72
 endfunction
 
 function s:setupMarkup()
@@ -200,24 +176,14 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
-function s:leaveMarkup()
-  set nowrap
-endfunction
-
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-au BufLeave *.{md,markdown,mdown,mkd,mkdn} call s:leaveMarkup()
-" au BufRead,BufNewFile *.txt call s:setupWrapping()
-
-augroup markdown
-  au!
-  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
+au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " Markdown
-" augroup mkd
-"   autocmd BufRead,BufNewFile *.md  set ai formatoptions=tcroqn2 comments=n:>
-" augroup END
+augroup mkd
+  autocmd BufRead,BufNewFile *.md  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
 
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
@@ -301,3 +267,25 @@ if &term == "xterm-ipad"
   inoremap <Tab> <Esc>`^
   inoremap <Leader><Tab> <Tab>
 endif
+
+" Create a 'scratch buffer' which is a temporary buffer Vim wont ask to save
+" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+     if part[0] =~ '\v[%#<]'
+        let expanded_part = fnameescape(expand(part))
+        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+     endif
+  endfor
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
