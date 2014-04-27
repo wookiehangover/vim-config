@@ -10,9 +10,6 @@
 [submodule "bundle/vim-endwise.vim"]
 	path = bundle/vim-endwise.vim
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "bundle/vim-unimpaired.vim"]
-	path = bundle/vim-unimpaired.vim
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/jshint.vim"]
 	path = bundle/jshint.vim
 	url = git@github.com:wookiehangover/jshint.vim.git
@@ -58,9 +55,6 @@
 [submodule "bundle/vim-align"]
 	path = bundle/vim-align
 	url = git://github.com/tsaleh/vim-align.git
-[submodule "bundle/eco.vim"]
-	path = bundle/eco.vim
-	url = https://github.com/jayferd/eco.vim.git
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
