@@ -16,9 +16,6 @@
 [submodule "bundle/jshint.vim"]
 	path = bundle/jshint.vim
 	url = git@github.com:wookiehangover/jshint.vim.git
-[submodule "bundle/html5.vim"]
-	path = bundle/html5.vim
-	url = https://github.com/othree/html5.vim.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
