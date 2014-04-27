@@ -109,3 +109,6 @@
 [submodule "bundle/color-sampler-pack"]
 	path = bundle/color-sampler-pack
 	url = git@github.com:vim-scripts/Colour-Sampler-Pack.git
+[submodule "bundle/editorconfig.vim"]
+	path = bundle/editorconfig.vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
