@@ -70,9 +70,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
-[submodule "bundle/vim-clojure"]
-	path = bundle/vim-clojure
-	url = git://github.com/vim-scripts/VimClojure.git
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
