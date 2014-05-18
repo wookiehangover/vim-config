@@ -103,3 +103,9 @@
 [submodule "bundle/unimpaired.vim"]
 	path = bundle/unimpaired.vim
 	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "bundle/atom-colorscheme"]
+	path = bundle/atom-colorscheme
+	url = git@github.com:zaiste/Atom.git
+[submodule "bundle/zoomwintab.vim"]
+	path = bundle/zoomwintab.vim
+	url = git@github.com:vim-scripts/zoomwintab.vim.git
